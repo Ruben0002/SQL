@@ -4,3 +4,6 @@
 
 # AirBnb Price Per Zipcode Dashboard
 <img width="1427" alt="Screen Shot 2023-09-12 at 9 36 52 PM" src="https://github.com/Ruben0002/SQL/assets/98443597/b715933f-8c7f-4c6c-aad6-c353247f10bf">
+
+# Covid Dashboard
+
