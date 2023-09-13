@@ -7,3 +7,4 @@
 
 # Covid Dashboard
 <img width="1427" alt="Screen Shot 2023-09-12 at 9 43 15 PM" src="https://github.com/Ruben0002/SQL/assets/98443597/c7f2dbc8-ff67-46cf-8f97-a4ec4bfb98f7">
+<img width="1083" alt="Screen Shot 2023-09-12 at 9 47 15 PM" src="https://github.com/Ruben0002/SQL/assets/98443597/49978290-bb9a-4fca-8511-e71490aec400">
