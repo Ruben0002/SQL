@@ -25,7 +25,7 @@ The second witness, named Annabel, lives somewhere on "Franklin Ave".
 
 -- Identify the witnesses
 
--- Witness #1
+-- Witness #1 (id: 14887, name: Morty Schapiro, license_id: 118009)
 SELECT *
 FROM 
   person
@@ -36,7 +36,7 @@ ORDER BY
 LIMIT 1
 ;
 
--- Witness #2
+-- Witness #2 (id: 16371, name: Annabel Miller, license_id: 490173)
 SELECT *
 FROM 
   person
@@ -75,23 +75,24 @@ I saw the murder happen, and I recognized the killer from my gym when I was work
 ---------------------------------------------------------
 -- Digging Deeper
 
--- Using the first clues from the witness statements to find more information on potential suspects
+-- Using the first clues from the witness statements to find more information on potential suspects.
 
-SELECT *
+SELECT 
+    member.id
+  , member.person_id
+  , member.name
+  , member.membership_status
+  , chckin.check_in_date
 FROM 
-  get_fit_now_check_in
+	get_fit_now_member member
+JOIN get_fit_now_check_in chckin
+  ON chckin.membership_id = member.id
 WHERE 
-  membership_id LIKE '48Z%' -- membership id on gym bag started with "48Z"
-  AND check_in_date = '20180109' -- witness 2 recognized the suspect from the gym on Jan 9th 2018
+  member.id LIKE '48Z%' -- witness 1 saw membership id on gym bag started with "48Z"
+  AND chckin.check_in_date = '20180109' -- witness 2 recognized the suspect from the gym on Jan 9th 2018
 ;
 
--- Using the membership id's from potential suspects to retrieve full name & person id from the "get fit now member" table
-SELECT *
-FROM 
-  get_fit_now_member
-WHERE 
-  id IN('48Z7A', '48Z55')
-;
+-- Result: Jeremy Bowers & Joe Germuska
 
 ---------------------------------------------------------
 -- Joining the "Person" table to the "drivers_license" table to retrieve plate number information
@@ -107,8 +108,8 @@ JOIN drivers_license dl
 ON p.license_id = dl.id
 WHERE 
   p.name = 'Jeremy Bowers'
+  OR p.name = 'Joe Germuska'
   AND dl.plate_number LIKE '%H42W%'
-  OR p.name LIKE '%Joe Germuska%'
 ;
 
 /*
