@@ -1,4 +1,4 @@
-# Solution to SQL Murdery Mystery
+-- Solution to SQL Murdery Mystery on https://mystery.knightlab.com/
 
 -- Prompt
 /*
