@@ -183,8 +183,8 @@ JOIN drivers_license dl
 ;
 -- Results
 /*
- id	  |      name	     | license_id | height |   hair_color   |  gender	|   car_make | car_model
-99716	  | Miranda Priestly |	 202298	  |  66	   |      red	    |  female	|    Tesla   |  Model S
+ id   |      name        | license_id | height | hair_color |  gender  |  car_make | car_model
+99716 | Miranda Priestly |   202298   |   66   |    red	    |  female  |    Tesla  |  Model S
 
 Congrats, you found the brains behind the murder! Everyone in SQL City hails you as the greatest SQL detective of all time. Time to break out the champagne!
 */
